@@ -1,0 +1,4 @@
+export enum CarProfileType {
+    PICKUP_ONLY = 'PICKUP_ONLY',
+    PICKUP_WITH_TRAILER = 'PICKUP_WITH_TRAILER'
+}

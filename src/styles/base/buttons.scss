@@ -1,0 +1,61 @@
+@import './colors.scss';
+@import './constants.scss';
+
+.btn:hover {
+    cursor: pointer;
+}
+
+button.btn {
+    display: block;
+    border: none;
+    font-family: Roboto Regular;
+    font-size: $btn-normal-font-size;
+    font-weight: $btn-normal-font-weight;
+    letter-spacing: $btn-normal-letter-spacing;
+    padding: $btn-normal-padding;
+    text-transform: uppercase;
+    border-radius: $btn-normal-border-radius;
+
+    &.normal {
+        color: $white;
+        background-color: $medium-blue;
+
+        &:hover {
+            background-color: $accent-yellow;
+		}
+		&:disabled {
+			opacity: 0.6;
+			z-index: 1;
+		} 
+    }
+
+    &.black {
+        color: $dark;
+        background: $white;
+
+        &:hover {
+            color: $white;
+            background-color: $dark;
+        }
+    }
+    &.link {
+        color: $medium-blue
+	}
+	
+	&:disabled {
+		cursor: default;
+	}
+
+}
+
+@media screen and (max-width: $small) {
+    button.btn {
+        padding: $btn-small-padding;
+    }
+}
+
+.in-iframe {
+    button.btn {
+        padding: $btn-iframe-normal-padding;
+    }
+}

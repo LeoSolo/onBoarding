@@ -1,0 +1,7 @@
+import 'core-js'
+import 'es6-promise'
+import 'isomorphic-fetch'
+import 'raf'
+import 'blob-polyfill'
+import 'canvas-toBlob'
+import 'object-assign'

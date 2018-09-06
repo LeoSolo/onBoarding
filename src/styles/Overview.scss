@@ -1,0 +1,198 @@
+@import './base/colors.scss';
+@import './base/constants.scss';
+
+div.react-tabs {
+    height: auto;
+}
+
+@media (max-width: $medium) {
+    div.react-tabs {
+        height: auto;
+        padding-bottom: 15px;
+    }
+}
+
+.tab-list-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.moreBtn {
+    display: none;
+    top: 8px;
+    right: 8px;
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 8px;
+    color: $gray;
+    .arrow {
+        margin-top: 3px;
+        margin-left: 3px;
+        width: 18px;
+        height: 18px;
+        background: url("icons/arrow.svg") center center no-repeat;
+        background-size: 65%;
+        -webkit-transform: rotate(180deg);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+  }
+  
+  .moreBtn.closed {
+    .arrow {
+      -webkit-transform: rotate(0);
+    }
+  }
+
+.tab-list {
+    width: 97%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: 200ms linear;
+    overflow: hidden;
+    .tab {
+        -webkit-transition: 200ms linear;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        height: 30px;
+        padding: 0 6px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1;
+        text-align: center;
+        min-width: 110px;
+        color: $border;
+        border-bottom: 3px solid $border;
+        border-right: 3px solid $border;
+        &:first-child {
+            border-left: none;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
+        &:active {
+            background: $silver;
+        }
+        &.selected {
+            color: $dark;
+            border-bottom: 3px solid $accent-yellow;
+            &:hover {
+                cursor: auto;
+                opacity: 1;
+            }
+        }
+    }
+    &.closed {
+        height: auto;
+    }
+}
+
+@media(max-width: $medium) {
+    .tab-list {
+        font-size: $tp-medium-h4-font-size;
+        flex-wrap: wrap;
+        min-height: 60px;
+        /*padding-right: 70px;*/
+        &.closed {
+            height: 30px;
+            min-height: 30px;
+            .tab {
+                display: none;
+                &.three-nth-show {
+                    display: flex;
+                    &:last-child.withBorder {
+                        border-left: 3px solid $border;
+                    }
+                }
+            }
+        }
+        .tab {
+            width: 33.3%;
+            max-width: 33.3%;
+            &:nth-child(3n) {
+                border-right: none;
+            }
+        }
+    }
+    .moreBtn {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+@media(max-width: 409px) {
+    .tab-list {
+        .tab {
+            max-width: none;
+        }
+        &.extended {
+            min-height: 90px;
+        }
+        .tab:nth-child(3n) {
+            border-right: 3px solid $border;
+        }
+        .tab:nth-child(even) {
+            border-right: none;
+        }
+        &.closed {
+            min-height: 30px;
+            .tab {
+                border-left: none !important;
+                display: none;
+                &.three-nth-show {
+                    display: none;
+                }
+                &.selected, &.prev, &.next {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 320px) {
+    .tab-list {
+        height: 180px;
+        .tab {
+            border-right: none !important;
+            min-width: 51%;
+        }
+        &.closed {
+            .tab {
+                display: none;
+            }
+            .tab.selected {
+                display: block;
+            }
+        }
+    }
+}
+
+.in-iframe {
+    .moreBtn {
+        .arrow {
+            margin-top: 0px;
+            height: 14px;
+        }
+    }
+}

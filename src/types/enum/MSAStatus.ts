@@ -1,0 +1,4 @@
+export enum MSAStatus {
+    ACTIVATED = 'ACTIVATED',
+    REQUEST_ACCESS = 'REQUEST_ACCESS'
+}

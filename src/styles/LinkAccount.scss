@@ -1,0 +1,54 @@
+@import './base/constants.scss';
+
+.passwordCheckerContainer {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    align-items: center;
+    .passwordCheckerContainerTitle {
+        padding: 3px;
+    }
+}
+
+.linkAccountContainer {
+    position: relative;
+    width: 100%;
+    max-width: 265px;
+    height: 198px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    top: 50px;
+    .btn,
+    button {
+        position: relative;
+        width: 100% !important;
+        height: 50px;
+        margin-bottom: 16px;
+        padding: 0 !important;
+        border: 0;
+    }
+}
+
+.inputsContainer {
+    input {
+        width: 48%;
+    }
+}
+
+.in-iframe {
+    @media screen and (max-width: $iframe-medium-width-1) {
+        .inputsContainer {
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

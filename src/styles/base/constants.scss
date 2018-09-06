@@ -1,0 +1,110 @@
+/* BUTTONS START */
+$btn-normal-font-size: 14px;
+$btn-normal-font-weight: 900;
+$btn-normal-letter-spacing: 1px;
+$btn-normal-padding: 22px 39px;
+$btn-normal-border-radius: 4em;
+
+$btn-iframe-normal-padding: 15px 26px;
+
+$btn-small-padding: $btn-iframe-normal-padding;
+
+/* BUTTONS END */
+
+/* FORM START */
+
+$form-thin-border: 1px;
+
+$form-normal-border-radius: 4em;
+$form-normal-height: 38px;
+$form-normal-padding: 0 12px;
+$form-normal-margin-bottom: 10px;
+
+$form-iframe-margin-bottom: 5px;
+$form-iframe-height: 33px;
+
+
+$form-normal-alert-padding: .75rem 1.25rem;
+$form-normal-alert-border-radius: .25rem;
+$form-normal-alert-max-width: 640px;
+$form-normal-alert-top: 10px;
+$form-normal-alert-margin: 0 auto;
+$form-normal-alert-margin-bottom: 10px;
+
+$form-iframe-top: 5px;
+$form-iframe-margin-bottom: 5px;
+
+
+
+/* FORM END */
+
+/* MEDIA START */
+
+$iframe-min-width: 338px;
+$iframe-medium-width: 380px;
+$iframe-medium-width-1: 379px;
+$iframe-max-width: 456px;
+
+$medium: 710px;
+$medium-min: 457px;
+$small: $iframe-max-width;
+$medium-small: 381px;
+$medium-small-p-1: 382px;
+$extra-small: 337px;
+
+/* MEDIA END */
+
+/* LAYOUT START */
+
+
+
+/* LAYOUT END */
+
+/* TYPOGRAPHY START */
+
+$tp-normal-h1-font-size: 55px;
+$tp-normal-h1-font-weight: 300;
+$tp-normal-h2-font-size: 35px;
+$tp-normal-h2-font-weight: 300;
+$tp-normal-h3-font-size: 21px;
+$tp-normal-h3-font-weight: 400;
+$tp-normal-h4-font-size: 18px;
+$tp-normal-h4-font-weight: 300;
+
+$tp-medium-h1-font-size: 30px;
+$tp-medium-h1-font-weight: 300;
+$tp-medium-h2-font-size: 25px;
+$tp-medium-h2-font-weight: 300;
+$tp-medium-h3-font-size: 18px;
+$tp-medium-h3-font-weight: 400;
+$tp-medium-h4-font-size: 14px;
+$tp-medium-h4-font-weight: 300;
+
+$tp-normal-font-size: 15px;
+$tp-small-font-size: 13px;
+$tp-normal-font-weight: 300;
+$tp-normal-line-height: 26px;
+
+$tp-normal-input-font-size: 12px;
+
+$tp-normal-a-font-weight: 400;
+
+$tp-normal-ul-normal-font-weight: 400;
+
+$tp-iframe-font-size: 13px;
+$tp-iframe-font-size: 11px;
+$tp-iframe-line-height: 20px;
+
+$tp-iframe-h1-font-size: 25px;
+$tp-iframe-h1-font-weight: 300;
+$tp-iframe-h2-font-size: 20px;
+$tp-iframe-h2-font-weight: 300;
+$tp-iframe-h3-font-size: 15px;
+$tp-iframe-h3-font-weight: 400;
+$tp-iframe-h4-font-size: 14px;
+$tp-iframe-h4-font-weight: 300;
+
+/* TYPOGRAPHY END */
+
+
+$mainPadding: 8px;

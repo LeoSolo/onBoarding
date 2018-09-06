@@ -1,0 +1,48 @@
+@import '../base/colors.scss';
+
+.shadowBlock {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background: RGBA(0,0,0,.6);
+    z-index: 999999;
+    opacity: 0;
+    -webkit-transition: 300ms linear;
+  }
+  .shadowBlock.shadowForImg {
+    position: absolute;
+  }
+  .shadowBlock.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1em;
+    color: $white;
+    opacity: 1;
+    div {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      background: url("../icons/loading.svg") center center no-repeat;
+      background-size: contain;
+      -webkit-animation: preloader 1s linear infinite;
+      margin: 14px auto;
+    }
+  }
+
+  .preloader{
+    z-index: 999999
+  }
+
+  @keyframes preloader {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }

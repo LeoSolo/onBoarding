@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es5",
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "checkJs": false,
+    "lib": ["dom", "es6"],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/*",
+    "Territory.tsx"
+  ],
+  "types": [
+    "googlemaps",
+    "markerclustererplus"
+  ]
+}

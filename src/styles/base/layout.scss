@@ -1,0 +1,84 @@
+@import './constants.scss';
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &.space-between {
+        justify-content: space-between;
+    }
+    &.center {
+        justify-content: center;
+    }
+    &.right {
+        justify-content: flex-end;
+    }
+    &.left {
+        justify-content: flex-start;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.separatorDiv {
+    clear: both;
+    width: 100%;
+    height: 2px;
+}
+
+.h30 {
+    height: 30px;
+}
+.h10 {
+    height: 10px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-48 {
+    width: 48%;
+}
+
+@media screen and (max-width: $small) {
+    .row {
+        &.wrap-xm {
+            flex-wrap: wrap
+        }
+        &.justify-center-xm {
+            justify-content: center
+        }
+    }
+    .align-center-xm {
+        text-align: center
+    }
+}
+
+@media(max-width: $extra-small) {
+    .row {
+        &.wrap-xs {
+            flex-wrap: wrap
+        }
+        &.justify-center-xs {
+            justify-content: center
+        }
+    }
+    .align-center-xs {
+        text-align: center
+    }
+}
+
+.in-iframe {
+    .separatorDiv-if {
+        height: 5px;
+    }
+}

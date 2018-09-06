@@ -1,0 +1,44 @@
+@import './base/colors.scss';
+@import './base/constants.scss';
+
+.inputsContainer {
+    position: relative;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 620px;
+    .inputTitle {
+      color: $gray;
+      margin: 5px 0 4px 0;
+    }
+    label {
+        input {
+            width: auto;
+        }
+    }
+    .hearAboutSelect {
+        margin-top: 8px;
+        margin-bottom: 14px;
+        width: 100%;
+    }
+  }
+
+.captchaContainer.error {
+    width: 304px;
+    height: 78px;
+    border: 1px solid $border-error;
+    border-radius: 5px;
+}
+
+@media (max-width: 370px) {
+    .checkStatus {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+    }
+}

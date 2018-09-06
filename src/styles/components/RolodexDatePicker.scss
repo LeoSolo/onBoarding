@@ -1,0 +1,49 @@
+@import '../base/colors.scss';
+@import '../base/constants.scss';
+
+.rolodex-picker-wrapper {
+    &.error {
+        input {
+            border-color: $border-error;
+        }
+    }
+    &.success {
+        input {
+            border-color: $border-success;
+        }
+    }
+}
+
+.rolodex-date-picker__header {
+    width: 100%;
+    height: 36px;
+    text-align: center;
+    align-items: center;
+}
+
+.rolodex-date-picker__button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    .btn {
+        padding: 10px;
+        font-size: $tp-iframe-font-size;
+    }
+}
+
+.in-iframe {
+    .rolodex-date-picker__header {
+        height: 25px;
+    }
+    
+    .rolodex-date-picker__button-container {
+        padding: 5px;
+        .btn {
+            padding: 10px;
+            font-size: $tp-iframe-font-size;
+        }
+    }
+}

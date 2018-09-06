@@ -1,0 +1,14 @@
+@import './base/fonts.scss';
+@import './base/constants.scss';
+@import './base/colors.scss';
+@import './base/buttons.scss';
+@import './base/typography.scss';
+@import './base/form.scss';
+@import './base/layout.scss';
+@import './layout/baseLayout.scss';
+@import './controls/select.scss';
+
+.authContainer+.alertMessage,
+.linkAccountContainer+.alertMessage {
+    top: 50px;
+}

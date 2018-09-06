@@ -1,0 +1,153 @@
+@import './base/colors.scss';
+@import './base/constants.scss';
+
+.personalInfoTab {
+    .avatarImg {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        float: left;
+        margin-right: 10px;
+        border: 1px dashed $border;
+        text-align: center;
+        padding-top: 55px;
+        font-size: 1.1em;
+        border-radius: 3px;
+        color: $gray;
+    }
+    .avatarImg.error {
+        border-color: $border-error;
+    }
+    .inputsContainer {
+        position: relative;
+        max-width: 620px;
+        margin-top: 20px;
+        border-top: 1px solid $border;
+        padding-top: 20px;
+        z-index: 9999;
+        .overviewContainerTitle {
+            position: absolute;
+            top: -21px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            padding: 6px;
+            background: $white;
+            color: $gray;
+            overflow: hidden;
+            text-overflow: ellipsis;
+			word-break: break-all;
+			text-align: center;
+            min-width: 176px;
+        }
+        input,
+        .selectComponent {
+            width: 48%;
+        }
+        input[name="streetInput"] {
+            width: 100%;
+        }
+        .dateInputContainer {
+            position: relative;
+            display: flex;
+            width: 48%;
+            height: 38px;
+            line-height: 38px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            &>div:first-child {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+            .calendarIcon {
+                position: absolute;
+                height: 38px;
+                width: 38px;
+                top: 1px;
+                right: 6px;
+                background: url("icons/calendar.svg") center center no-repeat;
+                background-size: 80%;
+                pointer-events: none;
+            }
+        }
+        .dateInputContainer.error {
+            input {
+                border: 1px solid $border-error;
+            }
+        }
+    }
+    &.selected {
+        padding-bottom: 45px;
+    }
+}
+
+html:not(.in-iframe) {
+    .personalInfoTab {
+        @media (max-width: $small) {
+            .inputsContainer {
+                .overviewContainerTitle {
+                    min-width: 190px;
+                }
+            }
+        }
+        @media (max-width: $medium-small) {
+            .dateInputContainer {
+                margin-bottom: 8px;
+                width: 100% !important;
+            }
+        }
+        @media (max-width: $extra-small) {
+            .inputsContainer {
+                .overviewContainerTitle {
+                    min-width: 160px;
+                }
+            }
+        }
+    }
+}
+
+.in-iframe {
+    .personalInfoTab {
+        .avatarImg {
+            width: 90px;
+            height: 90px;
+            padding-top: 15px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        .inputsContainer {
+            .overviewContainerTitle {
+                top: -17px;
+                min-width: 160px;
+            }
+            input,
+            .selectComponent {
+                width: 48%;
+            }
+            input[name="streetInput"] {
+                width: 100%;
+            }
+            .dateInputContainer {
+                .calendarIcon {
+                    width: 30px;
+                    height: 30px;
+                    top: 1px;
+                    right: 5px;
+                }
+                line-height: 26px;
+                input {
+                    text-align: left;
+                    padding-left: 12px;
+                }
+            }
+        }
+        &.selected {
+            padding-bottom: 8px;
+        }
+    }
+}

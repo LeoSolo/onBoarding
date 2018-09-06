@@ -1,0 +1,136 @@
+@import './colors.scss';
+
+input {
+    border: $form-thin-border solid $border;
+    border-radius: $form-normal-border-radius;
+    height: $form-normal-height;
+    padding: $form-normal-padding;
+    margin-bottom: $form-normal-margin-bottom;
+    font-family: Roboto Regular;
+
+    &[type="checkbox"],&[type="radio"] {
+        height: auto;
+    }
+
+    &.success {
+        border: $form-thin-border solid $border-success;
+    }
+
+    &.error {
+        border: $form-thin-border solid $border-error;
+    }
+
+    &.text {
+        &:hover,&:focus {
+            background-color: $input-onfocus
+        }
+    }
+}
+
+.checkboxLabel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    input {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		margin:0;
+		margin-top:2px;
+		margin-left: 2px;
+    }
+    .checkmark-box {
+        position: relative;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+        flex-shrink: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .label-text:hover {
+        cursor: pointer;
+    }
+    input:not(checked) + .checkmark-box {
+        background: url(icons/DarkNotChecked.png) center center no-repeat;
+        background-size: contain;
+    } 
+    input:checked + .checkmark-box {
+        background: url(icons/DarkChecked.png) center center no-repeat;
+        background-size: contain;
+	}
+	.label-text {
+		border-bottom: 1px dashed white;
+	}
+	input:focus ~ .label-text {
+		border-bottom: 1px dashed $border;
+	}
+
+}
+
+label.error {
+    color: $border-error;
+}
+
+.alertMessage {
+    color: $alert-text-color;
+    background-color: $alert-background-color;
+    position: relative;
+    padding: $form-normal-alert-padding;
+    border: $form-thin-border solid $alert-border-color;
+    border-radius: $form-normal-alert-border-radius;
+    display: none;
+    clear: both;
+    max-width: $form-normal-alert-max-width;
+    top: $form-normal-alert-top;
+    margin: $form-normal-alert-margin;
+    margin-bottom: $form-normal-alert-margin-bottom;
+    opacity: 0;
+    -webkit-transition: 150ms linear;
+    &.active {
+        display: block;
+        opacity: 1;
+        -webkit-animation: showMessage 150ms linear;
+    }
+    &.done {
+        background-color: $alert-done-background-color;
+        border-color: $alert-done-border-color;
+        color: $alert-done-color;
+    }
+}
+
+@keyframes showMessage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: $medium-small) {
+    html:not(.in-iframe) {
+        input:not([type="checkbox"]) {
+            width: 100% !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+
+.in-iframe {
+    input {
+        margin-bottom: $form-iframe-margin-bottom;
+        height: $form-iframe-height;
+        &[type="checkbox"],&[type="radio"] {
+            height: auto;
+        }
+    }
+    .alertMessage {
+        top: $form-iframe-top;
+        margin-bottom: $form-iframe-margin-bottom;
+    }
+}

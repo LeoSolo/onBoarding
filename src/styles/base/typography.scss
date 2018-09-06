@@ -1,0 +1,140 @@
+@import './colors.scss';
+@import './constants.scss';
+
+h1 {
+    font-family: Roboto Regular !important;
+    font-weight: $tp-normal-h1-font-weight;
+    font-size: $tp-normal-h1-font-size;
+}
+
+h2 {
+    font-family: Roboto Regular !important;
+    font-weight: $tp-normal-h2-font-weight;
+    font-size: $tp-normal-h2-font-size;
+}
+
+h3 {
+    font-family: Roboto Regular !important;
+    font-weight: $tp-normal-h3-font-weight;
+    font-size: $tp-normal-h3-font-size;
+}
+
+h4 {
+    font-family: Roboto Regular !important;
+    font-weight: $tp-normal-h4-font-weight;
+    font-size: $tp-normal-h4-font-size;
+}
+
+@media (max-width: $medium) {
+    h1 {
+        font-family: Roboto Regular;
+        font-weight: $tp-medium-h1-font-weight;
+        font-size: $tp-medium-h1-font-size;
+    }
+    
+    h2 {
+        font-family: Roboto Regular;
+        font-weight: $tp-medium-h2-font-weight;
+        font-size: $tp-medium-h2-font-size;
+    }
+    
+    h3 {
+        font-family: Roboto Regular;
+        font-weight: $tp-medium-h3-font-weight;
+        font-size: $tp-medium-h3-font-size;
+    }
+    
+    h4 {
+        font-family: Roboto Regular;
+        font-weight: $tp-medium-h4-font-weight;
+        font-size: $tp-medium-h4-font-size;
+    }
+}
+
+body, html, input {
+    font-family: Roboto Regular !important;
+    font-size: $tp-normal-font-size;
+    font-weight: $tp-normal-font-weight;
+    line-height: $tp-normal-line-height;
+    color: $gray;
+}
+
+input {
+    font-size: $tp-normal-input-font-size;
+}
+
+a {
+    font-family: Roboto Regular;
+    font-weight: $tp-normal-a-font-weight;
+    font-size: $tp-normal-font-size;
+    line-height: $tp-normal-line-height;
+    color: $medium-blue;
+    text-decoration-line: none;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+ul.normal {
+    &:before {
+        font-family: Roboto Regular;
+        font-weight: $tp-normal-ul-normal-font-weight;
+        font-size: $tp-normal-font-size;
+        line-height: $tp-normal-line-height;
+        color:$gray;
+    }
+}
+
+ul.checked {
+    &:before {
+        font-family: FA;
+        font-weight: solid;
+        font-size: $tp-normal-font-size;
+        line-height: $tp-normal-line-height;
+        color: $accent-yellow;
+        content: '\f058';
+    }
+}
+
+ul.none {
+  list-style-type: none;
+}
+
+@media screen and (max-width: $extra-small) {
+    html,
+    body {
+        font-size: $tp-iframe-font-size;
+        font-weight: $tp-normal-font-weight;
+    }
+}
+
+
+.in-iframe {
+    body, html, input, a {
+        font-size: $tp-iframe-font-size;
+        line-height: $tp-iframe-line-height;
+    }
+    h1 {
+        font-family: Roboto Regular;
+        font-weight: $tp-iframe-h1-font-weight;
+        font-size: $tp-iframe-h1-font-size;
+    }
+    
+    h2 {
+        font-family: Roboto Regular;
+        font-weight: $tp-iframe-h2-font-weight;
+        font-size: $tp-iframe-h2-font-size;
+    }
+    
+    h3 {
+        font-family: Roboto Regular;
+        font-weight: $tp-iframe-h3-font-weight;
+        font-size: $tp-iframe-h3-font-size;
+    }
+    
+    h4 {
+        font-family: Roboto Regular;
+        font-weight: $tp-iframe-h4-font-weight;
+        font-size: $tp-iframe-h4-font-size
+    }
+}

@@ -1,0 +1,399 @@
+@import './base/colors.scss';
+@import './base/constants.scss';
+.driversLicenseTab {
+    .inputRow {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        input {
+            width: 48%;
+        }
+        .driverLicenseInput {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 2;
+            -webkit-order: 2;
+            order: 2
+        }
+        .stateSelect {
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -ms-flex-order: 1;
+            -webkit-order: 1;
+            order: 1
+        }
+        .forDatePicker {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -ms-flex-order: 3;
+            -webkit-order: 3;
+            order: 3
+        }
+    }
+    .licenseImg {
+        position: relative;
+        float: left;
+        width: 120px;
+        height: 80px;
+        background: url("icons/driversLicenseLogo.png") top left no-repeat;
+        background-size: 65%;
+    }
+    .inputsContainer {
+        border-top: 1px solid $border;
+        padding-top: 20px;
+        margin-top: 30px;
+        display: block;
+        z-index: 9999;
+        .overviewContainerTitle {
+            position: absolute;
+            top: -21px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            padding: 6px;
+            background: $white;
+            color: $gray;
+            max-height: 28px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            min-width: 188px;
+        }
+        .forDatePicker {
+            width: 48%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            &>div:first-child {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+            .calendarIcon {
+                position: relative;
+                &:after {
+                    width: 38px;
+                    height: 38px;
+                    content: "";
+                    top: 0px;
+                    position: absolute;
+                    right: 6px;
+                    background: url("icons/calendar.svg") center center no-repeat;
+                    background-size: 80%;
+                    pointer-events: none;
+                }
+            }
+            &.error {
+                input {
+                    border: 1px solid $border-error;
+                }
+            }
+        }
+        label {
+            position: relative;
+            height: 38px;
+            line-height: $tp-normal-line-height;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            .calendarIcon {
+                position: absolute;
+                height: 38px;
+                width: 38px;
+                top: 0;
+                right: 8px;
+                background: url("icons/calendar.svg") center center no-repeat;
+                background-size: 80%;
+            }
+        }
+    }
+    .imgsContainer {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 620px;
+        .imageUploadContainer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 25px;
+            .shadowBlock {
+                border-radius: 25px;
+            }
+            .imageUploadBtn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url(icons/upload.png) 98% 2% no-repeat;
+                background-size: 15%;
+                opacity: 0;
+                z-index: 10;
+                -webkit-transition: 200ms linear;
+                border-radius: 3px;
+                &:hover {
+                    opacity: .7;
+                    cursor: pointer;
+                }
+                &:active {
+                    opacity: 1;
+                }
+                form {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    input.fileInput {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        .frontLicense,
+        .backLicense {
+            position: relative;
+            width: 250px;
+            min-width: 250px;
+            height: 160px;
+            border: 1px solid $border;
+            text-align: center;
+            line-height: 160px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            color: $gray;
+            input {
+                border-radius: 9px;
+            }
+        }
+        .licensePhoto.error {
+            border-color: $border-error;
+        }
+        .frontLicense {
+            margin-right: 6px;
+        }
+    }
+    .selectComponent {
+        width: 48%;
+    }
+}
+
+html:not(.in-iframe) {
+    @media (max-width: $medium) {
+        .driversLicenseTab {
+            .inputsContainer {
+                .overviewContainerTitle {
+                    min-width: 200px;
+                }
+            }
+            .imgsContainer {
+                margin-bottom: 20px !important;
+            }
+            .forDatePicker {
+                margin-bottom: 8px;
+            }
+            .imgsContainer .frontLicense,
+            .imgsContainer .backLicense {
+                margin: 5px auto;
+            }
+            &.selected {
+                padding-bottom: 100px;
+            }
+        }
+    }
+    @media screen and (min-width: $medium-small-p-1) and (max-width: $medium) {
+        .driversLicenseTab {
+            .inputRow {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                input {
+                    width: 48%;
+                }
+                .forDatePicker {
+                    width: 48% !important;
+                }
+                .driverLicenseInput {
+                    -webkit-box-ordinal-group: 3;
+                    -moz-box-ordinal-group: 3;
+                    -ms-flex-order: 3;
+                    -webkit-order: 3;
+                    order: 3;
+                    width: 100%
+                }
+                .stateSelect {
+                    -webkit-box-ordinal-group: 1;
+                    -moz-box-ordinal-group: 1;
+                    -ms-flex-order: 1;
+                    -webkit-order: 1;
+                    order: 1;
+                }
+                .forDatePicker {
+                    -webkit-box-ordinal-group: 2;
+                    -moz-box-ordinal-group: 2;
+                    -ms-flex-order: 2;
+                    -webkit-order: 2;
+                    order: 2;
+                }
+            }
+        }
+    }
+    @media (max-width: $medium-small) {
+        .driversLicenseTab {
+            .imgsContainer {
+                margin-bottom: 20px !important;
+            }
+            .forDatePicker {
+                margin-bottom: 8px;
+                width: 100% !important;
+            }
+            .imgsContainer .frontLicense,
+            .imgsContainer .backLicense {
+                margin: 5px auto;
+            }
+            &.selected {
+                padding-bottom: 100px;
+            }
+        }
+    }
+}
+
+.in-iframe {
+    .driversLicenseTab {
+        .inputsContainer {
+            .overviewContainerTitle {
+                top: -17px;
+                color: $gray;
+                min-width: 175px;
+                text-align: center;
+            }
+            .forDatePicker {
+                input {
+                    padding-left: 12px;
+                    text-align: left;
+                }
+                .calendarIcon {
+                    position: relative;
+                    &:after {
+                        width: 30px;
+                        height: 30px;
+                        content: "";
+                        top: 1px;
+                        position: absolute;
+                        right: 5px;
+                        background: url("icons/calendar.svg") center center no-repeat;
+                        background-size: 80%;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+        .inputRow {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            input {
+                width: 48%;
+            }
+            .driverLicenseInput {
+				-webkit-box-ordinal-group: 3;
+				-moz-box-ordinal-group: 3;
+				-ms-flex-order: 3;
+				-webkit-order: 3;
+                order: 3;
+                width: 100%
+            }
+            .stateSelect {
+				-webkit-box-ordinal-group: 1;
+				-moz-box-ordinal-group: 1;
+				-ms-flex-order: 1;
+				-webkit-order: 1;
+                order: 1;
+            }
+            .forDatePicker {
+				-webkit-box-ordinal-group: 2;
+				-moz-box-ordinal-group: 2;
+				-ms-flex-order: 2;
+				-webkit-order: 2;
+                order: 2;
+            }
+        }
+        .imgsContainer {
+            position: relative;
+            width: 100%;
+            margin: 0 auto 10px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .frontLicense,
+            .backLicense {
+                margin: 5px auto;
+                font-size: $tp-iframe-h4-font-size;
+            }
+        }
+        .selectComponent {
+            width: 48%;
+        }
+    }
+    @media screen and (min-width: $iframe-medium-width) and (max-width: $iframe-max-width) {
+        .driversLicenseTab {
+            .imgsContainer {
+                .frontLicense,
+                .backLicense {
+                    padding: 33px 8px 0px 8px;
+                    width: 160px;
+                    min-width: 160px;
+                    height: 102.5px;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $iframe-medium-width-1) {
+        .driversLicenseTab {
+            .imgsContainer {
+                flex-wrap: nowrap;
+                .frontLicense,
+                .backLicense {
+                    padding: 23px 8px 0px 8px;
+                    width: 140px;
+                    min-width: 140px;
+                    height: 90px;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

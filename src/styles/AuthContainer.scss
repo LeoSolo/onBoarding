@@ -1,0 +1,41 @@
+@import './base/constants.scss';
+
+.authContainer {
+    position: relative;
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    top: 20px;
+    input {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .extraOptions {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .authContainer {
+        width: 90%;
+        .extraOptions {
+            flex-wrap: wrap;
+            justify-content: center;
+            a {
+                width: 51%;
+                text-align: center;
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

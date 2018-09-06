@@ -1,0 +1,11 @@
+{
+  "extends": ["tslint-config-standard", "tslint-react"],
+  "rules": {
+    "ter-indent": [4, {
+      "SwitchCase": 8
+    }],
+    "space-before-function-paren": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-no-multiline-js": false
+  }
+}

@@ -1,0 +1,208 @@
+@import '../base/colors.scss';
+@import '../base/constants.scss';
+
+.selectComponent {
+    &.error {
+        .Select-control {
+            border: $form-thin-border solid $border-error;
+        }
+    }
+    &.success {
+        .Select-control {
+            border: $form-thin-border solid $border-success;
+        }
+    }
+    .Select-menu-outer {
+        background: $white;
+        position: absolute;
+        width: inherit;
+        margin-top: -1px;
+        z-index: 1000;
+    }
+    .Select-control {
+        position: relative;
+        width: 100%;
+        border: 1px solid $border;
+        border-radius: 21px;
+        height: 38px;
+        
+        .Select-input {
+            position: relative;
+            width: 100%;
+            input {
+                background-color: rgba(0,0,0,0);
+                border: none;
+                max-width: calc(90% - 25px - 10px);
+                text-overflow: ellipsis;
+                float: none;
+            }
+        }
+        .Select-value,
+        .Select-placeholder {
+            position: absolute;
+            height: $form-normal-height;
+            font-size: $tp-normal-input-font-size;
+            line-height: 36px;
+            left: 12px;
+            color: $gray;
+        }
+        .Select-value {
+            color: $gray;
+        }
+        .Select-clear-zone {
+            position: absolute;
+            display: inline-block;
+            width: 10px;
+            height: 19px;
+            opacity: .5;
+            top: 9.5px;
+            right: 25px;
+            line-height: 16px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .Select-arrow-zone {
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            top: 9.5px;
+            right: 5px;
+            span {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: url("icons/arrow.svg") center center no-repeat;
+                background-size: 60%;
+                opacity: .5;
+            }
+        }
+        &+.Select-menu-outer {
+            
+            border: 1px solid $border;
+            border-radius: 3px;
+            max-height: 200px;
+            .Select-menu {
+                overflow-y: auto;
+                max-height: 198px;
+                &::-webkit-scrollbar {
+                    position: relative;
+                    width: 2px;
+                    height: 2px;
+                }
+                &::-webkit-scrollbar-button {
+                    width: 0px;
+                    height: 0px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $medium-blue;
+                    border: 0px none $white;
+                    border-radius: 50px;
+                    right: 4px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $medium-blue;
+                }
+                &::-webkit-scrollbar-thumb:active {
+                    background: $medium-blue;
+                }
+                &::-webkit-scrollbar-track {
+                    background: $white;
+                    border: 0px none $white;
+                    border-radius: 50px;
+                }
+                &::-webkit-scrollbar-track:hover {
+                    background: $white;
+                }
+                &::-webkit-scrollbar-track:active {
+                    background: $border;
+                }
+                &::-webkit-scrollbar-corner {
+                    background: transparent;
+                }
+            }
+            
+            font-family: Roboto Regular;
+            font-size: $tp-normal-input-font-size;
+            
+            div {
+                div {
+                    height: 34px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 34px;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                    border-right: 1px solid $border;
+                    font-family: Roboto Regular;
+                    color: $gray;
+                    font-weight: normal;
+                    &:hover {
+                        background: $border;
+                        color: $dark;
+                    }
+                }
+            }
+        }
+    }
+    &.disabled {
+        .Select-control {
+            opacity: 0.6;
+        }
+    }
+}
+
+.selectComponent.is-open {
+    .Select-arrow-zone {
+        span {
+            -webkit-transform: rotate(180deg);
+        }
+    }
+}
+
+.Select {
+    .Select-option.is-focused {
+      background: #ececec;
+    }
+    .Select-option:hover {
+      background: lightgray;
+    }
+  } 
+
+.in-iframe {
+    .selectComponent .Select-control {
+        height: 33px;
+        .Select-value,
+        .Select-placeholder {
+            line-height: 31px !important;
+            width: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .Select-arrow-zone {
+            top: 7.5px;
+        }
+        .Select-clear-zone {
+            top: 7.5px;
+        }
+    }
+}
+
+@media screen and (max-width: $medium-small) {
+    html:not(.in-iframe) {
+        .selectComponent {
+            margin-bottom: 8px;
+            width: 100% !important;
+            
+            .Select-control {
+                .Select-value-label {
+                    text-overflow: ellipsis;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}

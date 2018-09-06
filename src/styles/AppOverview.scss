@@ -1,0 +1,129 @@
+@import './base/colors.scss';
+@import './base/constants.scss';
+
+.appOverviewTab {
+    .haulerImg {
+        position: relative;
+        float: left;
+        width: 120px;
+        height: 80px;
+        background: url("icons/overviewLogo.png") center center no-repeat;
+        background-size: 65%;
+    }
+    .statusContainer {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        clear: both;
+        p:first-child {
+            font-weight: bold;
+            flex: 1;
+            max-width: 120px;
+            text-align: center;
+            font-size: $tp-normal-font-size;
+        }
+        p {
+            flex: 3;
+        }
+    }
+    .overviewListContainer {
+        position: relative;
+        width: 92%;
+        margin: 0 auto;
+        max-width: 620px;
+        .overviewContainer {
+            position: relative;
+            width: 100%;
+            border-top: 1px solid $border;
+            margin-top: 40px;
+            .overviewContainerTitle {
+                position: absolute;
+                top: -21px;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                padding: 6px;
+                background: $white;
+                color: $gray;
+				max-height: 28px;
+				white-space: nowrap;
+                text-overflow: ellipsis;
+				text-align: center;
+            }
+            ul {
+                width: 100%;
+                height: 100%;
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    margin-top: 10px;
+                    .title {
+                        font-size: $tp-normal-font-size;
+                        line-height: $tp-normal-line-height;
+                        word-wrap: normal;
+                        min-width: 260px;
+                        margin: 0;
+					}
+					.subtitle {
+						font-size: $tp-small-font-size;
+						line-height: $tp-normal-line-height;
+                        word-wrap: normal;
+                        min-width: 260px;
+						margin: 5px 0 0 0;
+					}
+                    .pendingInfo,
+                    .completeInfo {
+                        height: 34px;
+                        text-align: center;
+                        width: 100px;
+                        line-height: $tp-normal-line-height;
+                    }
+                }
+            }
+        }
+    }
+}
+
+:not(.in-iframe) {
+	@media screen and (max-width: $medium-small) {
+		.appOverviewTab {
+			.overviewListContainer {
+				.overviewContainer {
+					.overviewContainerTitle {
+						min-width: 180px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: $extra-small) {
+		.appOverviewTab {
+			.overviewListContainer {
+				.overviewContainer {
+					.overviewContainerTitle {
+						min-width: 130px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.in-iframe {
+    .appOverviewTab {
+        .overviewListContainer {
+            .overviewContainer {
+                .overviewContainerTitle {
+                    top: -17px;
+                    max-width: 150px;
+                }
+            }
+        }
+    }
+}
+
